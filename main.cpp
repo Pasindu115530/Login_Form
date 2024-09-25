@@ -98,7 +98,9 @@ int main(){
     UserManager usermanage;
 
    int op;
+
  do{
+    system("cls");
   
     cout << "01.Register User " << endl;
     cout << "02.Login User " << endl;
@@ -122,11 +124,16 @@ int main(){
             usermanage.DeleteUser();
             break;
         case 5:
-            cout << "Thank you for joining with us....." << endl;    
+            cout << "Thank you for joining with us....." << endl;  
+        default:
+            cout << "Invalid input" << endl;  }
+
+        cout << endl; // Optional: adds an extra line for better readability
+        system("pause"); // Pause the system to allow the user to read the message before clearing          
 
 
 
-    }
+  
  }while(op != 5);
     return 0;
 }
