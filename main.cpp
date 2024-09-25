@@ -11,7 +11,15 @@ class User{
         User(string name, string pass) {
             username = name;
             password = pass;
-        }   
+        }  
+
+        string getName(){
+            return username;
+        } 
+
+        string getPassword(){
+            return password;
+        }
 };
 class UserManager{
     private:
@@ -29,6 +37,26 @@ class UserManager{
 
             cout << " User Register Sucessfullyy....." << endl;
         }     
+        void LoginUser(){
+            string name,pass;
+            cout << "Enter your username : " ;
+            cin >> name;
+            cout << "Enter your password : " ;
+            cin >> pass;
+            for(int i = 0 ; i < users.size() ; i++){
+                if(users[i].getName() == name && users[i].getPassword() == pass){
+                    cout << "Login Sucessfully......." << endl;
+                    break;
+                }
+                else{
+                    cout << "Wrong Passwod " << endl;
+                    break;
+                }
+            }
+
+
+
+        }
 
 
 };
@@ -36,7 +64,9 @@ class UserManager{
 int main(){
     UserManager usermanage;
 
-    int op;
+   int op;
+ do{
+  
     cout << "01.Register User " << endl;
     cout << "02.Login User " << endl;
     cout << "03.Show User " << endl;
@@ -49,7 +79,10 @@ int main(){
         case 1:
             usermanage.RegisterUser();
             break;
-    }
+        case 2:
+            usermanage.LoginUser();    
 
+    }
+ }while(op != 6);
     return 0;
 }
