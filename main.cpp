@@ -53,10 +53,12 @@ class UserManager{
                     break;
                 }
             }
-
-
-
-        }
+       }
+       void ShowUser(){
+            for(int i = 0 ; i < users.size() ; i ++){
+                cout << i+1 << " user name is " <<  users[i].getName() << endl;
+            }
+       }
 
 
 };
@@ -80,7 +82,12 @@ int main(){
             usermanage.RegisterUser();
             break;
         case 2:
-            usermanage.LoginUser();    
+            usermanage.LoginUser();  
+            break;
+        case 3:
+            usermanage.ShowUser();
+            break;
+
 
     }
  }while(op != 6);
